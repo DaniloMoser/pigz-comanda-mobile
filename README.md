@@ -4,6 +4,15 @@ Aplicativo Mobile para Pigz Comanda - Sistema de gerenciamento de caixas
 
 Como Rodar o Projeto
 
+1. Clone o repositório 
+https://github.com/DaniloMoser/pigz-comanda-mobile.git
+cd pigz-comanda-mobile
+2. Instale as dependências
+npm install
+3. Execute o projeto
+npm start
+
+
 Pré-requisitos
 
 Node.js 16+ instalado
