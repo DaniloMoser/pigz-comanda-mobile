@@ -38,29 +38,23 @@ export const CashSelectionScreen: React.FC<CashSelectionScreenProps> = ({ onBack
   const [showPasswordModal, setShowPasswordModal] = useState(false);
   const [selectedInitialValue, setSelectedInitialValue] = useState('');
 
-  console.log('Estado atual:', { showOpenModal, showPasswordModal, selectedCashRegister }); 
-
   const handleCashRegisterPress = (cashRegister: CashRegister) => {
-    console.log('Caixa selecionado:', cashRegister.name); 
     setSelectedCashRegister(cashRegister);
     setShowOpenModal(true);
   };
 
   const handleCloseOpenModal = () => {
-    console.log('Fechando modal de abertura'); 
     setShowOpenModal(false);
     setSelectedCashRegister(null);
   };
 
   const handleOpenCash = (initialValue: string) => {
-    console.log('Abrir caixa clicado, valor:', initialValue); 
     setSelectedInitialValue(initialValue);
     setShowOpenModal(false);
     setShowPasswordModal(true);
   };
 
   const handleCashPasswordConfirm = (cashPassword: string) => {
-    console.log('Senha confirmada:', cashPassword); 
     Alert.alert(
       'Sucesso!', 
       `Caixa ${selectedCashRegister?.name} aberto com sucesso!\nValor inicial: ${selectedInitialValue}`
@@ -71,7 +65,6 @@ export const CashSelectionScreen: React.FC<CashSelectionScreenProps> = ({ onBack
   };
 
   const handleClosePasswordModal = () => {
-    console.log('Fechando modal de senha'); 
     setShowPasswordModal(false);
     setSelectedInitialValue('');
   };
@@ -81,7 +74,7 @@ export const CashSelectionScreen: React.FC<CashSelectionScreenProps> = ({ onBack
       <Header 
         title="Pigz Comanda" 
         showRefresh={true}
-        onRefresh={() => console.log('Refresh')}
+        onRefresh={() => {}}
       />
       
       <View style={globalStyles.container}>
@@ -111,6 +104,7 @@ export const CashSelectionScreen: React.FC<CashSelectionScreenProps> = ({ onBack
         visible={showOpenModal}
         animationType="slide"
         transparent={true}
+        statusBarTranslucent={true}
         onRequestClose={handleCloseOpenModal}
       >
         {selectedCashRegister && (
@@ -126,10 +120,11 @@ export const CashSelectionScreen: React.FC<CashSelectionScreenProps> = ({ onBack
         visible={showPasswordModal}
         animationType="slide"
         transparent={true}
+        statusBarTranslucent={true}
         onRequestClose={handleClosePasswordModal}
       >
         {selectedCashRegister && (
-          <CashPasswordModal
+          <CashPasswordModal 
             cashRegister={selectedCashRegister}
             initialValue={selectedInitialValue}
             onClose={handleClosePasswordModal}
