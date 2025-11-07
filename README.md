@@ -1,69 +1,173 @@
-Pigz Comando - Aplicativo Mobile
+Pigz Comando — Aplicativo Mobile
 
-Aplicativo Mobile para Pigz Comanda - Sistema de gerenciamento de caixas
+Aplicativo mobile para Pigz Comanda — sistema de gerenciamento de caixas (versão mobile).
 
-Como Rodar o Projeto
+✨ Visão geral
 
-1. Clone o repositório 
-https://github.com/DaniloMoser/pigz-comanda-mobile.git
+Aplicativo multiplataforma (iOS / Android) desenvolvido com React Native + Expo e TypeScript. Projetado para permitir login administrativo, seleção de caixa, registro de valores, validação por senha e confirmação de operação com foco em usabilidade e acessibilidade.
+
+📦 Funcionalidades principais
+
+Fluxo linear: Login → Seleção de Caixa → Valor → Senha → Confirmação
+
+Feedback visual em tempo real (senha ocultada, estados de carregamento)
+
+Estados de caixa (ex.: EM USO) com destaque visual
+
+Modais com botão de fechar (X)
+
+Acessibilidade: contraste adequado, tamanhos de fonte e áreas de toque mínimos
+
+Compatibilidade: iOS, Android e tablets com layout adaptável
+
+🚀 Como rodar o projeto (local)
+
+Clone o repositório
+
+git clone https://github.com/DaniloMoser/pigz-comanda-mobile.git
 cd pigz-comanda-mobile
-2. Instale as dependências
+
+
+Instale dependências
+
 npm install
-3. Execute o projeto
+# ou
+yarn
+
+
+Inicie o Expo
+
 npm start
+# ou
+yarn start
 
 
-Pré-requisitos
+Abra no dispositivo
 
-Node.js 16+ instalado
-npm ou fio
-Expo CLI (opcional)
-Dispositivo móvel com app Expo Go ou emulador
-Acesso via Expo Go Abra o app Expo Go no seu celular
+Abra o app Expo Go no celular e escaneie o QR code exibido no terminal / Metro Bundler.
 
-Escaneie o código QR que aparece no terminal
+Ou use emulador (Android Studio / Xcode) com Run on Android / iOS.
 
-O aplicativo carregará automaticamente
+🛠️ Pré-requisitos
 
-Credenciais de Teste Senha administrativa: 123456
+Node.js 16+
 
-Caixas disponíveis: Lecoração Geoafeeda e Gelachanel son toura (nomes fictícios)
+npm (ou yarn)
 
-Decisões de UX/UI
+(Opcional) Expo CLI instalado globalmente
 
-Feedback visual imediato
-Campos de senha mostram pontos (••••••) em tempo real
+npm install -g expo-cli
 
-Estados "EM USO" com cor vermelha e opacidade
 
-Botões com estados de carregamento
+Dispositivo com Expo Go ou emulador configurado
 
-Navegação Intuitiva
-Fluxo linear: Login → Seleção → Valor → Senha → Confirmação
+🔐 Credenciais de teste
 
-Botões de ação sempre visíveis e acessíveis
+Senha administrativa: 123456
 
-Modal com botão X para fechar
+Caixas disponíveis (nomes fictícios):
 
-Acessibilidade
-Cores com contraste adequado
+Lecoração
 
-Tamanhos de fonte legíveis
+Geoafeeda
 
-Áreas de toque mínimo de 48px
+Gelachanel son toura
 
-Tecnologias e Ferramentas React Native com Expo: Desenvolvimento multiplataforma
+Observação: troque credenciais de teste por um sistema real de autenticação antes de produção.
 
-TypeScript: Tipagem estática para maior confiabilidade
+🎨 Decisões de UX / UI (resumo)
 
-Componentes estilizados: Estilização consistente e temática
+Feedback visual imediato: campos de senha com pontos (••••••) em tempo real.
 
-Brincadeira: Testes unitários para componentes críticos
+Estados “EM USO”: cor vermelha e opacidade ajustada para indicar indisponibilidade.
 
-Compatibilidade com iOS: 12.0+
+Botões: suporte a estado de carregamento (spinner) e feedback de toque.
+
+Navegação: fluxo intuitivo e linear para reduzir erro do usuário.
+
+Acessibilidade: contraste suficiente, fontes legíveis e áreas de toque ≥ 48px.
+
+Modal: inclui botão claro para fechar (X).
+
+🧩 Tecnologias e ferramentas
+
+React Native + Expo
+
+TypeScript
+
+Componentes estilizados (ex.: StyleSheet, styled-components ou solução escolhida)
+
+Testes unitários recomendados (Jest + React Native Testing Library)
+
+Controle de versão: Git / GitHub
+
+📱 Compatibilidade
+
+iOS: 12.0+
 
 Android: 8.0+
 
-Tablets: Layout adaptável
+Tablets: layout adaptável
 
-Orientação: Retrato e Paisagem
+Orientação: suporta retrato e paisagem (priorizar retrato para fluxo principal)
+
+🧪 Testes
+
+Adicione testes unitários para componentes críticos (login, validação de senha, seleção de caixa).
+
+Sugestão: jest + @testing-library/react-native.
+
+Exemplo de script npm:
+
+"scripts": {
+  "start": "expo start",
+  "android": "expo start --android",
+  "ios": "expo start --ios",
+  "web": "expo start --web",
+  "test": "jest"
+}
+
+🗂 Estrutura sugerida (exemplo)
+/src
+  /components
+  /screens
+    LoginScreen.tsx
+    CashSelectionScreen.tsx
+    ...
+  /services
+  /utils
+  /assets
+App.tsx
+
+⚙️ Boas práticas e recomendações
+
+Centralizar strings em arquivo de i18n para futura internacionalização.
+
+Manter temas (claro/escuro) via useColorScheme ou Context API.
+
+Proteger rotas sensíveis com autenticação e renovar credenciais com backend seguro.
+
+Usar variáveis de ambiente para endpoints e chaves (não commitar .env).
+
+Exemplo .env (NUNCA comitar em repositório público):
+
+API_URL=https://api.exemplo.com
+
+❗ Dicas para produção
+
+Remover credenciais hard-coded antes de publicar.
+
+Habilitar builds nativos com eas build (Expo Application Services) para distribuição.
+
+Monitoramento (Sentry ou similar) para erros em produção.
+
+Testes em dispositivos reais e diferentes versões Android/iOS.
+
+🧑‍🤝‍🧑 Contribuição
+
+Contribuições são bem-vindas! Abra issues para bugs ou features e envie PRs com descrição clara das mudanças.
+
+📬 Contato
+
+Desenvolvedor: Danilo Rodrigues
+Repositório: https://github.com/DaniloMoser/pigz-comanda-mobile
