@@ -1,4 +1,4 @@
-Pigz Comando — Aplicativo Mobile
+Pigz Comanda — Aplicativo Mobile
 
 Aplicativo mobile para Pigz Comanda — sistema de gerenciamento de caixas (versão mobile).
 
@@ -31,14 +31,14 @@ cd pigz-comanda-mobile
 Instale dependências
 
 npm install
-# ou
+ou
 yarn
 
 
 Inicie o Expo
 
 npm start
-# ou
+ou
 yarn start
 
 
@@ -166,6 +166,10 @@ Testes em dispositivos reais e diferentes versões Android/iOS.
 🧑‍🤝‍🧑 Contribuição
 
 Contribuições são bem-vindas! Abra issues para bugs ou features e envie PRs com descrição clara das mudanças.
+
+📝 Licença
+
+Escolha a licença que desejar (ex.: MIT). Adicione um arquivo LICENSE no repositório.
 
 📬 Contato
 
